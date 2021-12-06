@@ -51,6 +51,8 @@ def main():
     lives = 6
     main_font = pygame.font.SysFont("cambriamath", 60)
     
+    player_speed = 7
+    
 #.............................calling the class ship, inputs for ships location on the window    
     ship = Ship(350, 700)
     
@@ -81,5 +83,11 @@ def main():
         #..................................Key input for user movement
         keys = pygame.key.get_pressed()
         if keys[pygame.K_a]: #.........................Left
-            ship.x -= 1             
+            ship.x -= player_speed
+        if keys[pygame.K_d]: #.........................Right
+            ship.x += player_speed
+        if keys[pygame.K_s]: #.........................Down
+            ship.y += player_speed
+        if keys[pygame.K_w]: #.........................Up
+            ship.y -= player_speed             
 main()
