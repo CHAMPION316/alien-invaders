@@ -26,6 +26,17 @@ YELLOW_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_yellow.png"
 #Background
 BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "background-black.png")), (WIDTH, HEIGHT))
 
+class Ship: 
+    def __init__(self, x, y, color, health = 100):
+        self.x = x
+        self.y = y
+        self.health = health
+        self.ship_image = None
+        self.laser_image = None
+        self.lasers = []
+        self.cool_down_counter = 0
+        
+
 #Function that runs game while window remains open
 #Fucntion that determines player lives and levels
 
