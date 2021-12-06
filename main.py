@@ -82,12 +82,12 @@ def main():
         
         #..................................Key input for user movement
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_a]: #.........................Left
+        if keys[pygame.K_a] and ship.x - player_speed > 0: #.........................Left
             ship.x -= player_speed
-        if keys[pygame.K_d]: #.........................Right
+        if keys[pygame.K_d] and ship.x + player_speed + 30 < WIDTH: #.........................Right
             ship.x += player_speed
-        if keys[pygame.K_s]: #.........................Down
+        if keys[pygame.K_s] and ship.y + player_speed + 30 < HEIGHT: #.........................Down
             ship.y += player_speed
-        if keys[pygame.K_w]: #.........................Up
+        if keys[pygame.K_w] and ship.y - player_speed > 0: #.........................Up
             ship.y -= player_speed             
 main()
