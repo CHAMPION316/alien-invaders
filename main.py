@@ -40,7 +40,7 @@ class Ship:
     #............................Function that draws size of player on the window (temporary design *rectangle*)
     def draw(self, window):
         #pygame.draw.rect(window, (255, 255, 51), (self.x, self.y, 30, 30))
-        window.blit(self.ship_img, (self.x, self.y))
+        window.blit(self.ship_img, (self.x, self.y,))
         
 
 class Player(Ship):
@@ -64,7 +64,7 @@ def main():
     player_speed = 7
     
 #.............................calling the class player, inputs for players location on the window    
-    player = Player(350, 700)
+    player = Player(350, 620)
     
     clock = pygame.time.Clock()
     
@@ -92,11 +92,11 @@ def main():
         
         #..................................Key input for user movement
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_a] and player.x - player_speed > 0: #.........................Left
+        if keys[pygame.K_a] and player.x - player_speed > -10: #.........................Left
             player.x -= player_speed
-        if keys[pygame.K_d] and player.x + player_speed + 30 < WIDTH: #.........................Right
+        if keys[pygame.K_d] and player.x + player_speed + 90 < WIDTH: #.........................Right
             player.x += player_speed
-        if keys[pygame.K_s] and player.y + player_speed + 30 < HEIGHT: #.........................Down
+        if keys[pygame.K_s] and player.y + player_speed + 89 < HEIGHT: #.........................Down
             player.y += player_speed
         if keys[pygame.K_w] and player.y - player_speed > 0: #.........................Up
             player.y -= player_speed             
