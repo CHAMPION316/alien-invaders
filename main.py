@@ -57,13 +57,19 @@ class Player(Ship):
         self.mask = pygame.mask.from_surface(self.ship_img)
         self.max_health = health
 
-#........................................Takes inheritance from class Ship for enemy ships        
+#........................................Enemy ship class and their colors         
 class BadShips(Ship):
     EMEMY_COLORS = {
                    "blue": (BLUE_SPACE_SHIP, BLUE_LASER),
                    "green": (GREEN_SPACE_SHIP, GREEN_LASER),
                    "red": (RED_SPACE_SHIP, RED_LASER)
-                    }
+                    } #.......................................Dictionary for colors of enemy ships 
+    
+    #constructor that takes 
+    def __init__(self, x, y, color, health = 100):
+        super().__init__(x, y, health)  
+        self.ship_img, self.laser_img = self.EMENY_COLORS[color]
+        self.mask = pygame.mask.from_surface(self.ship_img)
        
 #............................Function that runs game while window remains open
 #............................Fucntion that determines player lives and levels
