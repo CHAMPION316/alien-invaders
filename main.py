@@ -71,8 +71,8 @@ class BadShips(Ship):
         self.mask = pygame.mask.from_surface(self.ship_img)
      
     #..................................................................Enemy movement     
-    def movement(self, velocity):
-        self.y += vel
+    def movement(self, speed):
+        self.y += speed
        
 #............................Function that runs game while window remains open
 #............................Fucntion that determines player lives and levels
@@ -83,6 +83,10 @@ def main():
     level = 1
     lives = 6
     main_font = pygame.font.SysFont("cambriamath", 60)
+    
+    enemies = []
+    wave_length = 3
+    enemy_speed = 2
     
     player_speed = 7
     
