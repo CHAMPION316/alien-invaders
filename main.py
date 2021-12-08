@@ -115,7 +115,11 @@ def main():
     
     while run:
         clock.tick(FPS)
-        redraw_window()
+        
+        #............................. Zero enemies triggers the next level with 2 more enemies added
+        if len(enemies) == 0:
+            level += 1
+            wave_length += 2
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -130,5 +134,8 @@ def main():
         if keys[pygame.K_s] and player.y + player_speed + player.get_height() < HEIGHT: #.........................Down
             player.y += player_speed
         if keys[pygame.K_w] and player.y - player_speed > 0: #.........................Up
-            player.y -= player_speed             
+            player.y -= player_speed
+            
+        redraw_window()
+                                 
 main()
