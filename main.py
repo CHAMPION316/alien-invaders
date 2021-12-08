@@ -14,7 +14,7 @@ RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_red_small.
 GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_green_small.png"))
 BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets","pixel_ship_blue_small.png"))
 
-#.............................The user's character image (player)s
+#.............................The user's character image (player)
 YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_yellow.png"))
 
 #Laser images
@@ -97,6 +97,7 @@ def main():
     clock = pygame.time.Clock()
     
     lost = False
+    lost_count = 0
     
     def redraw_window():
         WIN.blit(BG, (0,0))
@@ -124,9 +125,19 @@ def main():
     
     while run:
         clock.tick(FPS)
+        redraw_window()
         
+        #..................................................player dies if either of these statements are true and a life is lost
         if lives <= 0 or player.health <= 0:
             lost = True
+            lost_count += 1
+        
+        #...................................................Timer that quits game after losing    
+        if lost:
+            if lost_count > FPS * 5:
+                run = FALSE
+            else:
+                continue
         
         #............................. Zero enemies triggers the next level with 2 more enemies added
         if len(enemies) == 0:
@@ -158,6 +169,5 @@ def main():
                 lives -= 1
                 enemies.remove(enemy)
             
-        redraw_window()
                                  
 main()
