@@ -58,8 +58,8 @@ class Player(Ship):
         self.max_health = health
 
 #........................................Enemy ship class and their colors         
-class BadShips(Ship):
-    EMEMY_COLORS = {
+class Enemy(Ship):
+    ENEMY_COLORS = {
                    "blue": (BLUE_SPACE_SHIP, BLUE_LASER),
                    "green": (GREEN_SPACE_SHIP, GREEN_LASER),
                    "red": (RED_SPACE_SHIP, RED_LASER)
@@ -67,7 +67,7 @@ class BadShips(Ship):
      
     def __init__(self, x, y, color, health = 100):
         super().__init__(x, y, health)  
-        self.ship_img, self.laser_img = self.EMENY_COLORS[color]
+        self.ship_img, self.laser_img = self.ENEMY_COLORS[color]
         self.mask = pygame.mask.from_surface(self.ship_img)
      
     #..................................................................Enemy movement     
@@ -120,6 +120,9 @@ def main():
         if len(enemies) == 0:
             level += 1
             wave_length += 2
+            for i in range(wave_length):
+                enemy = Enemy(random.randrange(50, WIDTH - 100), random.randrange(-1300, -100), random.choice(["blue", "green", "red"]))
+                enemies.append(enemy)
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -135,6 +138,9 @@ def main():
             player.y += player_speed
         if keys[pygame.K_w] and player.y - player_speed > 0: #.........................Up
             player.y -= player_speed
+            
+        for enemy in enemies:
+            enemy.movement(enemy_speed)
             
         redraw_window()
                                  
