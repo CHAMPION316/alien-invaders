@@ -14,7 +14,7 @@ RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_red_small.
 GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_green_small.png"))
 BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets","pixel_ship_blue_small.png"))
 
-#.............................The user's character image (player)
+#.............................The user's character image (player)s
 YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_yellow.png"))
 
 #Laser images
@@ -82,11 +82,12 @@ def main():
     FPS = 60
     level = 1
     lives = 6
-    main_font = pygame.font.SysFont("cambriamath", 60)
+    main_font = pygame.font.SysFont("cambriamath", 40)
+    loser_font = pygame.font.SysFont("cambriamath", 40)
     
     enemies = []
-    wave_length = 3
-    enemy_speed = 2
+    wave_length = 6
+    enemy_speed = 3
     
     player_speed = 7
     
@@ -94,6 +95,8 @@ def main():
     player = Player(350, 620)
     
     clock = pygame.time.Clock()
+    
+    lost = False
     
     def redraw_window():
         WIN.blit(BG, (0,0))
@@ -108,13 +111,22 @@ def main():
         for enemy in enemies:
             enemy.draw(WIN)
         
-#...........................Draw window for the appearance of the player     
+        #...........................Draw window for the appearance of the player     
         player.draw(WIN)
+        
+        #..................................Displays message when you die in game 
+        if lost:
+            lost_label = loser_font.render("You Died", 1, (255, 51, 51))
+            WIN.blit(lost_label, (WIDTH/2 - lost_label.get_width()/2, 350))
+            
         
         pygame.display.update()
     
     while run:
         clock.tick(FPS)
+        
+        if lives <= 0 or player.health <= 0:
+            lost = True
         
         #............................. Zero enemies triggers the next level with 2 more enemies added
         if len(enemies) == 0:
@@ -138,9 +150,13 @@ def main():
             player.y += player_speed
         if keys[pygame.K_w] and player.y - player_speed > 0: #.........................Up
             player.y -= player_speed
-            
+        
+        #.........................................Speed in which the enemy moves down the screen    
         for enemy in enemies:
             enemy.movement(enemy_speed)
+            if enemy.y + enemy.get_height() > HEIGHT:
+                lives -= 1
+                enemies.remove(enemy)
             
         redraw_window()
                                  
