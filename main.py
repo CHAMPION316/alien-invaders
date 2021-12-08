@@ -104,6 +104,10 @@ def main():
         WIN.blit(lives_label, (20, 20))
         WIN.blit(level_label, (WIDTH - level_label.get_width() - 20, 20))
         
+        #...................................Draw each enemy on the screen
+        for enemy in enemies:
+            enemy.draw(WIN)
+        
 #...........................Draw window for the appearance of the player     
         player.draw(WIN)
         
