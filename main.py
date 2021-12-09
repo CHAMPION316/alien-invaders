@@ -94,6 +94,13 @@ class Enemy(Ship):
 #............................Function that runs game while window remains open
 #............................Fucntion that determines player lives and levels
 
+
+#....................................overlapping of two masks based on the offset of their top left coordinates
+def collide(obj1, obj2):
+    offset_x = obj2.x - obj1.x
+    offset_y = obj2.y - obj1.y
+    return obj1.mask.overlap(obj2.mask, (offset_x, offset_y)) != None
+
 def main():
     run = True
     FPS = 60
