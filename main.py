@@ -44,10 +44,12 @@ class Laser:
         self.y <= height and self.y >= 0
         
     def collision(self, obj):
-        return collide(obj, self)
+        return collide(self, obj)
 
 #....................................Class player's character and it's attributes
 class Ship: 
+    COOLDOWN = 30
+    
     def __init__(self, x, y, health = 100):
         self.x = x
         self.y = y
@@ -61,6 +63,19 @@ class Ship:
     def draw(self, window):
         #pygame.draw.rect(window, (255, 255, 51), (self.x, self.y, 30, 30))
         window.blit(self.ship_img, (self.x, self.y,))
+    
+    #..................................Timer that allows user to fire lasers again    
+    def cooldown(self):
+        if self.cool_down_counter >= self.COOLDOWN:
+            self.cool_down_counter = 0
+        elif self.cool_down_counter > 0:
+            self.cool_down_counter += 1
+        
+    def shoot(self):
+        if self.cool_down_counter == 0:
+            laser = Laser(x, y, self.laser_img)
+            self.lasers.append(laser)
+            self.cool_down_counter = 1
         
     def get_width(self):
         return self.ship_img.get_width()
