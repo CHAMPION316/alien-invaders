@@ -66,16 +66,18 @@ class Ship:
         for laser in self.lasers:
             laser.draw(window)
     
-    #..........................................method for different scenarios upon firing lasers        
+    #..........................................method for different scenarios upon firing lasers          
     def move_lasers(self, speed, obj):
         self.cooldown()
         for laser in self.lasers:
             laser.movement(speed)
             if laser.off_screen(HEIGHT):
                 self.lasers.remove(laser)
-            elif laser.collision(obj):
-                obj.health -= 30
-                self.lasers.remove(laser)
+            else:
+                for obj in objs:
+                    if laser.collision(obj):
+                        objs.remove(obj)
+                        self.lasers.remove(laser)
     
     #..................................Timer that allows user to fire lasers again    
     def cooldown(self):
@@ -141,9 +143,10 @@ def main():
     
     enemies = []
     wave_length = 6
-    enemy_speed = 3
+    enemy_speed = 4
     
-    player_speed = 7
+    player_speed = 6
+    laser_speed = 10
     
 #.............................calling the class player, inputs for players location on the window    
     player = Player(350, 620)
@@ -189,7 +192,7 @@ def main():
         #...................................................Timer that quits game after losing    
         if lost:
             if lost_count > FPS * 5:
-                run = FALSE
+                run = False
             else:
                 continue
         
@@ -209,7 +212,7 @@ def main():
         keys = pygame.key.get_pressed()
         if keys[pygame.K_a] and player.x - player_speed > -10: #.........................Left
             player.x -= player_speed
-        if keys[pygame.K_d] and player.x + player_speed + player.get_width() -10 < WIDTH: #.........................Right
+        if keys[pygame.K_d] and player.x + player_speed + player.get_width() -10 < WIDTH: #......................Right
             player.x += player_speed
         if keys[pygame.K_s] and player.y + player_speed + player.get_height() < HEIGHT: #.........................Down
             player.y += player_speed
@@ -218,12 +221,16 @@ def main():
         if keys[pygame.K_SPACE]:
             player.shoot()
         
-        #.........................................Speed in which the enemy moves down the screen    
+        #.....................................Speed in which the enemies and lasers move down the screen    
         for enemy in enemies:
             enemy.movement(enemy_speed)
+            enemy.move_lasers(laser_speed, player)
             if enemy.y + enemy.get_height() > HEIGHT:
                 lives -= 1
                 enemies.remove(enemy)
+        
+        #.............................................checks if lasers have collided with enemies         
+        player.move_lasers(laser_speed, enemies)
             
                                  
 main()
