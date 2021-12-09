@@ -33,7 +33,12 @@ class Laser:
         self.y = y
         self.img = img
         self.mask = pygame.mask.from_surface(self.img) 
-
+        
+    def draw(self, window):
+        window.blit(self.img, (self.x, self.y))
+        
+    def movement(self, speed):
+        self.y += speed
 
 #....................................Class player's character and it's attributes
 class Ship: 
