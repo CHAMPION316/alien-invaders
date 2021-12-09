@@ -59,10 +59,23 @@ class Ship:
         self.lasers = []
         self.cool_down_counter = 0
         
-    #............................Function that draws size of player on the window (temporary design *rectangle*)
+    #............................Method that draws size of player on the window (temporary design *rectangle*)
     def draw(self, window):
         #pygame.draw.rect(window, (255, 255, 51), (self.x, self.y, 30, 30))
         window.blit(self.ship_img, (self.x, self.y,))
+        for laser in self.lasers:
+            laser.draw(window)
+    
+    #..........................................method for different scenarios upon firing lasers        
+    def move_lasers(self, speed, obj):
+        self.cooldown()
+        for laser in self.lasers:
+            laser.movement(speed)
+            if laser.off_screen(HEIGHT):
+                self.lasers.remove(laser)
+            elif laser.collision(obj):
+                obj.health -= 30
+                self.lasers.remove(laser)
     
     #..................................Timer that allows user to fire lasers again    
     def cooldown(self):
@@ -71,7 +84,7 @@ class Ship:
         elif self.cool_down_counter > 0:
             self.cool_down_counter += 1
     
-    #...................................function that allows user to fire lasers    
+    #...................................method that allows the succession if when lasers can be fired   
     def shoot(self):
         if self.cool_down_counter == 0:
             laser = Laser(x, y, self.laser_img)
@@ -202,6 +215,8 @@ def main():
             player.y += player_speed
         if keys[pygame.K_w] and player.y - player_speed > 0: #.........................Up
             player.y -= player_speed
+        if keys[pygame.K_SPACE]:
+            player.shoot()
         
         #.........................................Speed in which the enemy moves down the screen    
         for enemy in enemies:
