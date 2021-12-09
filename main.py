@@ -39,6 +39,9 @@ class Laser:
         
     def movement(self, speed):
         self.y += speed
+        
+    def off_screen(self, height):
+        self.y <= height and self.y >= 0
 
 #....................................Class player's character and it's attributes
 class Ship: 
