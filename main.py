@@ -70,7 +70,8 @@ class Ship:
             self.cool_down_counter = 0
         elif self.cool_down_counter > 0:
             self.cool_down_counter += 1
-        
+    
+    #...................................function that allows user to fire lasers    
     def shoot(self):
         if self.cool_down_counter == 0:
             laser = Laser(x, y, self.laser_img)
