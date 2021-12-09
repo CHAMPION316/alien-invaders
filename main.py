@@ -41,14 +41,14 @@ class Laser:
         self.y += speed
         
     def off_screen(self, height):
-        self.y <= height and self.y >= 0
+        return not (self.y <= height and self.y >= 0)
         
     def collision(self, obj):
         return collide(self, obj)
 
 #....................................Class player's character and it's attributes
 class Ship: 
-    COOLDOWN = 30
+    COOLDOWN = 20
     
     def __init__(self, x, y, health = 100):
         self.x = x
@@ -67,7 +67,7 @@ class Ship:
             laser.draw(window)
     
     #..........................................method for different scenarios upon firing lasers          
-    def move_lasers(self, speed, obj):
+    def move_lasers(self, speed, objs):
         self.cooldown()
         for laser in self.lasers:
             laser.movement(speed)
@@ -89,7 +89,7 @@ class Ship:
     #...................................method that allows the succession if when lasers can be fired   
     def shoot(self):
         if self.cool_down_counter == 0:
-            laser = Laser(x, y, self.laser_img)
+            laser = Laser(self.x, self.y, self.laser_img)
             self.lasers.append(laser)
             self.cool_down_counter = 1
         
@@ -143,9 +143,9 @@ def main():
     
     enemies = []
     wave_length = 6
-    enemy_speed = 4
+    enemy_speed = 3
     
-    player_speed = 6
+    player_speed = 8
     laser_speed = 10
     
 #.............................calling the class player, inputs for players location on the window    
@@ -191,7 +191,7 @@ def main():
         
         #...................................................Timer that quits game after losing    
         if lost:
-            if lost_count > FPS * 5:
+            if lost_count > FPS * 3:
                 run = False
             else:
                 continue
@@ -199,7 +199,7 @@ def main():
         #............................. Zero enemies triggers the next level with 2 more enemies added
         if len(enemies) == 0:
             level += 1
-            wave_length += 2
+            wave_length += 3
             for i in range(wave_length):
                 enemy = Enemy(random.randrange(50, WIDTH - 100), random.randrange(-1300, -100), random.choice(["blue", "green", "red"]))
                 enemies.append(enemy)
@@ -221,7 +221,7 @@ def main():
         if keys[pygame.K_SPACE]:
             player.shoot()
         
-        #.....................................Speed in which the enemies and lasers move down the screen    
+        #.....................................Speed in which the enemies and lasers move on the screen    
         for enemy in enemies:
             enemy.movement(enemy_speed)
             enemy.move_lasers(laser_speed, player)
@@ -229,8 +229,8 @@ def main():
                 lives -= 1
                 enemies.remove(enemy)
         
-        #.............................................checks if lasers have collided with enemies         
-        player.move_lasers(laser_speed, enemies)
+        #.........................................checks if lasers have collided with enemies      
+        player.move_lasers(-laser_speed, enemies)
             
                                  
 main()
