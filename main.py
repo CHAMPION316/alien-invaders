@@ -67,9 +67,6 @@ class Ship:
     
     def get_height(self):
         return self.ship_img.get_height()
-    
-    def collision(self, object):
-        return collide (obj, self)
         
 #.........................................Takes inheritance from class Ship for use in player
 class Player(Ship):
