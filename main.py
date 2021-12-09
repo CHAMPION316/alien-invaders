@@ -26,7 +26,7 @@ YELLOW_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_yellow.png"
 #...................................Background
 BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "background-black.png")), (WIDTH, HEIGHT))
 
-
+#......................................class for shooting lasers 
 class Laser:
     def __init__(self, x, y, img):
         self.x = x
@@ -42,6 +42,9 @@ class Laser:
         
     def off_screen(self, height):
         self.y <= height and self.y >= 0
+        
+    def collision(self, obj):
+        return collide(obj, self)
 
 #....................................Class player's character and it's attributes
 class Ship: 
@@ -64,6 +67,9 @@ class Ship:
     
     def get_height(self):
         return self.ship_img.get_height()
+    
+    def collision(self, object):
+        return collide (obj, self)
         
 #.........................................Takes inheritance from class Ship for use in player
 class Player(Ship):
@@ -91,16 +97,14 @@ class Enemy(Ship):
     def movement(self, speed):
         self.y += speed
        
-#............................Function that runs game while window remains open
-#............................Fucntion that determines player lives and levels
-
-
-#....................................overlapping of two masks based on the offset of their top left coordinates
+#............a collision function for overlapping of two masks based on the offset of their top left coordinates
 def collide(obj1, obj2):
     offset_x = obj2.x - obj1.x
     offset_y = obj2.y - obj1.y
     return obj1.mask.overlap(obj2.mask, (offset_x, offset_y)) != None
 
+#............................Function that runs game while window remains open
+#............................Fucntion that determines player lives and levels
 def main():
     run = True
     FPS = 60
