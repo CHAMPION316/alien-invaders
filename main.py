@@ -165,7 +165,7 @@ def main():
     run = True
     FPS = 60
     level = 0       
-    lives = 6
+    lives = 1
     main_font = pygame.font.SysFont("cambriamath", 40)
     loser_font = pygame.font.SysFont("cambriamath", 40)
     
@@ -204,7 +204,6 @@ def main():
         if lost:
             lost_label = loser_font.render("You Died", 1, (255, 51, 51))
             WIN.blit(lost_label, (WIDTH/2 - lost_label.get_width()/2, 350))
-            
         
         pygame.display.update()
     
@@ -266,6 +265,20 @@ def main():
                 
         #.........................................checks if lasers have collided with enemies      
         player.move_lasers(-laser_speed, enemies)
-            
-                                 
-main()
+
+def main_menu():
+    title_font = pygame.font.SysFont("cambriamath", 40)
+    run = True
+    while run:
+        WIN.blit(BG, (0,0))
+        title_label = title_font.render("Click 'MOUSE' to begin!", 1, (51, 255, 51))
+        WIN.blit(title_label, (WIDTH/2 - title_label.get_width() / 2, 350))
+        pygame.display.update()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                main()           
+    pygame.quit()                                             
+        
+main_menu()
