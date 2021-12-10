@@ -48,7 +48,7 @@ class Laser:
 
 #....................................Class player's character and it's attributes
 class Ship: 
-    COOLDOWN = 20
+    COOLDOWN = 30
     
     def __init__(self, x, y, health = 100):
         self.x = x
@@ -67,17 +67,15 @@ class Ship:
             laser.draw(window)
     
     #..........................................method for different scenarios upon firing lasers          
-    def move_lasers(self, speed, objs):
+    def move_lasers(self, speed, obj):
         self.cooldown()
         for laser in self.lasers:
             laser.movement(speed)
             if laser.off_screen(HEIGHT):
                 self.lasers.remove(laser)
-            else:
-                for obj in objs:
-                    if laser.collision(obj):
-                        objs.remove(obj)
-                        self.lasers.remove(laser)
+            elif laser.collision(obj):
+                obj.health -= 10
+                self.lasers.remove(laser)
     
     #..................................Timer that allows user to fire lasers again    
     def cooldown(self):
@@ -107,6 +105,18 @@ class Player(Ship):
         self.laser_img = YELLOW_LASER
         self.mask = pygame.mask.from_surface(self.ship_img)
         self.max_health = health
+        
+    def move_lasers(self, speed, objs):
+        self.cooldown()
+        for laser in self.lasers:
+            laser.movement(speed)
+            if laser.off_screen(HEIGHT):
+                self.lasers.remove(laser)
+            else:
+                for obj in objs:
+                    if laser.collision(obj):
+                        objs.remove(obj)
+                        self.lasers.remove(laser)
 
 #........................................Enemy ship class and their colors         
 class Enemy(Ship):
@@ -124,6 +134,12 @@ class Enemy(Ship):
     #..................................................................Enemy movement     
     def movement(self, speed):
         self.y += speed
+        
+    def shoot(self):
+        if self.cool_down_counter == 0:
+            laser = Laser(self.x-20, self.y, self.laser_img)
+            self.lasers.append(laser)
+            self.cool_down_counter = 1
        
 #............a collision function for overlapping of two masks based on the offset of their top left coordinates
 def collide(obj1, obj2):
@@ -136,20 +152,20 @@ def collide(obj1, obj2):
 def main():
     run = True
     FPS = 60
-    level = 1
+    level = 0       
     lives = 6
     main_font = pygame.font.SysFont("cambriamath", 40)
     loser_font = pygame.font.SysFont("cambriamath", 40)
     
     enemies = []
-    wave_length = 6
+    wave_length = 5
     enemy_speed = 3
     
-    player_speed = 8
-    laser_speed = 10
+    player_speed = 6
+    laser_speed = 8
     
 #.............................calling the class player, inputs for players location on the window    
-    player = Player(350, 620)
+    player = Player(350, 650)
     
     clock = pygame.time.Clock()
     
@@ -222,13 +238,20 @@ def main():
             player.shoot()
         
         #.....................................Speed in which the enemies and lasers move on the screen    
-        for enemy in enemies:
+        for enemy in enemies[:]:
             enemy.movement(enemy_speed)
             enemy.move_lasers(laser_speed, player)
-            if enemy.y + enemy.get_height() > HEIGHT:
+            
+            if random.randrange(0, 2*60) == 1:
+                enemy.shoot()
+                
+            if collide(enemy, player):
+                player.health -= 10
+                enemies.remove(enemy) 
+            elif enemy.y + enemy.get_height() > HEIGHT:
                 lives -= 1
                 enemies.remove(enemy)
-        
+                
         #.........................................checks if lasers have collided with enemies      
         player.move_lasers(-laser_speed, enemies)
             
