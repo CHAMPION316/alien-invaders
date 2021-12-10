@@ -171,13 +171,13 @@ def main():
     
     enemies = []
     wave_length = 5
-    enemy_speed = 3
+    enemy_speed = 2
     
     player_speed = 6
-    laser_speed = 8
+    laser_speed = 7
     
 #.............................calling the class player, inputs for players location on the window    
-    player = Player(350, 650)
+    player = Player(350, 620)
     
     clock = pygame.time.Clock()
     
@@ -242,7 +242,7 @@ def main():
             player.x -= player_speed
         if keys[pygame.K_d] and player.x + player_speed + player.get_width() -10 < WIDTH: #......................Right
             player.x += player_speed
-        if keys[pygame.K_s] and player.y + player_speed + player.get_height() < HEIGHT: #.........................Down
+        if keys[pygame.K_s] and player.y + player_speed + player.get_height() + 20 < HEIGHT: #.........................Down
             player.y += player_speed
         if keys[pygame.K_w] and player.y - player_speed > 0: #.........................Up
             player.y -= player_speed
