@@ -117,6 +117,13 @@ class Player(Ship):
                     if laser.collision(obj):
                         objs.remove(obj)
                         self.lasers.remove(laser)
+    
+    
+    #....................................................Player's health bar                    
+    def healthbar(self, window):
+        pygame.draw.rect(window, (255, 255, 255), (self.x + self.y + self.ship_img.get.height() + 10, self.ship_img.get_width(), 10))
+        pygame.draw.rect(window, (0, 255, 0), (self.x + self.y + self.ship_img.get.height() + 10, self.ship_img.get_width() * (self.health / self.max_health)), 10)
+        
 
 #........................................Enemy ship class and their colors         
 class Enemy(Ship):
