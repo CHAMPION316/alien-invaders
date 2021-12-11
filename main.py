@@ -10,21 +10,22 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Invaders")  
 
 #..............................Load images
-RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_red_small.png"))
-GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_green_small.png"))
-BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets","pixel_ship_blue_small.png"))
+RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "red_alien_ship.png"))
+GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "green_alien_ship.png"))
+BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets","blue_alien_ship.png"))
 
 #.............................The user's character image (player)
-YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_yellow.png"))
+#YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_yellow.png"))
+WAR_SPACE_SHIP = pygame.image.load(os.path.join("assets","raider_raptor.png"))
 
 #Laser images
-RED_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_red.png"))
-GREEN_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_green.png"))
-BLUE_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_blue.png"))
-YELLOW_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_yellow.png"))
+RED_LASER = pygame.image.load(os.path.join("assets", "laser_red.png"))
+GREEN_LASER = pygame.image.load(os.path.join("assets", "laser_green.png"))
+BLUE_LASER = pygame.image.load(os.path.join("assets", "laser_blue.png"))
+YELLOW_LASER = pygame.image.load(os.path.join("assets", "laser_yellow.png"))
 
 #...................................Background
-BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "background-black.png")), (WIDTH, HEIGHT))
+BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "outer_space_bg.png")), (WIDTH, HEIGHT))
 
 #......................................class for shooting lasers 
 class Laser:
@@ -101,7 +102,7 @@ class Ship:
 class Player(Ship):
     def __init__(self, x, y, health = 100):
         super().__init__(x, y, health)
-        self.ship_img = YELLOW_SPACE_SHIP
+        self.ship_img = WAR_SPACE_SHIP #YELLOW_SPACE_SHIP
         self.laser_img = YELLOW_LASER
         self.mask = pygame.mask.from_surface(self.ship_img)
         self.max_health = health
@@ -166,7 +167,7 @@ def main():
     run = True
     FPS = 60
     level = 0       
-    lives = 1
+    lives = 5
     main_font = pygame.font.SysFont("cambriamath", 40)
     loser_font = pygame.font.SysFont("cambriamath", 40)
     
@@ -242,7 +243,7 @@ def main():
             player.x -= player_speed
         if keys[pygame.K_d] and player.x + player_speed + player.get_width() -10 < WIDTH: #......................Right
             player.x += player_speed
-        if keys[pygame.K_s] and player.y + player_speed + player.get_height() + 20 < HEIGHT: #.........................Down
+        if keys[pygame.K_s] and player.y + player_speed + player.get_height() + 10 < HEIGHT: #.........................Down
             player.y += player_speed
         if keys[pygame.K_w] and player.y - player_speed > 0: #.........................Up
             player.y -= player_speed
@@ -267,6 +268,7 @@ def main():
         #.........................................checks if lasers have collided with enemies      
         player.move_lasers(-laser_speed, enemies)
 
+#.................Menu that begins with a click
 def main_menu():
     title_font = pygame.font.SysFont("cambriamath", 40)
     run = True
