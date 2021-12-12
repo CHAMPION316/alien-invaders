@@ -15,18 +15,22 @@ The game is a very standard old school style 2D [fixed shooter](https://en.wikip
 
 The objective is to make it through as many levels as possible without dying but successfully eliminating your enemies. This will be accomplished by firing a laser that you will have at your disposal.
 
-### 1.2 [**Main Menu**](readme-files/main-menu.jpg)
+### 1.2 [Main Menu](readme-files/main-menu.jpg)
 
-Upon loading the game you will be presented with a very simplistic main menu. You will be instructed to [click](readme-files/start-game.jpg) the mouse button in order to begin playing.
+Upon loading the game you will be presented with a very simplistic main menu. You will be instructed to [**click**](readme-files/start-game.jpg) the mouse button in order to begin playing.
 
 ### 1.3 User Goal
 
-#### *STYLE*
-The background is presented with the same image that you see in the main menu of the game which is the background of where the game takes place. I decided to 
+I required a lot of help and guidance for this project due to the fact that I had to take a leave of absense at a job in a cruise ship until just about two weeks ago. There is more I would of liked to have done with this project but unfortunately time was not on my side. I struggled remembering a lot of the information I had learned since there was no way for me to spend the necessary time learning the material. I had to fast track and use a lot of resources to gain some kind of grasp of what I was doing.
+
+
+### 1.4 Style
+The background is presented with the same image that you see in the main menu of the game which is the background of where the game takes place. I chose a font that would fit an alien invasion theme and came to the conclusion that [_**Showcard Gothic**_](readme-files/font-style.jpg) was the best option visually.
+
 
 ## 2 Gameplay
 
-Gameplay requires the use of the [**WASD**](readme-files/move-input.jpg) keys to move horizontally and vertically. Using the [**spacebar key**](readme-files/space-shoot.jpg) fires the player's laser.
+[**Gameplay**](readme-files/game-play.jpg) requires the use of the [**WASD**](readme-files/move-input.jpg) keys to move horizontally and vertically. Using the [**spacebar key**](readme-files/space-shoot.jpg) fires the player's laser.
 
 In the top left and right corners of the screen the player will be presented with the lives and level numbers that corresponds to them.
 - [Game-Bar](readme-files/game-bar.jpg)
@@ -43,9 +47,9 @@ Player begins game with 5 lives but can _lose_ them if:
 
 ### 2.2 Health Bar
 
-The player maintains a health bar of 100% that decreases by 10% by either: and losing all his health bar doesn't account for the lost of lives but instead losing the game entirely. 
+The player maintains a health bar of 100% that decreases by 10% by either:
 
-1. _Suffer a laser hit from the enemy -10%_
+1. _Taking a laser hit from the enemy -10%_
 2. _Collide with the enemy resulting in the enemies death and a -10% deduction to players health._
 
 When the player loses all of his health he will lose the game even if he has a single life remaining.
@@ -58,12 +62,14 @@ Lasers in this game have a [__cooldown__](readme-files/cooldown-shot.jpg) of 1 s
 
 - _Laser [**speed**](readme-files/laser-speed.jpg) is set to 5 for both player and enemy_
 
-I required a lot of help and guidance for this project due to the fact that I had to take a leave of absense at a job in a cruise ship until just about two weeks ago. There is more I would of liked to have done with this project but unfortunately time was not on my side. I struggled remembering a lot of the information I had learned since there was no way for me to spend the necessary time learning the material. I had to fast track and use a lot of resources to gain some kind of grasp of what I was doing. 
-
-- Background and ships are P**NG images designed by me using [Adobe Photoshop](https://www.adobe.com/products/photoshop.html)
+- Background and ships are PNG images designed by me using [Adobe Photoshop](https://www.adobe.com/products/photoshop.html)
 
     * [Laser_Image](readme-files/laser_green_0.jpg)
     * [Space_Ship](readme-files/space_ship_creation.jpg)
 - (The other colors were only saved as **PNG** format since all I had to do was change the color in the **PSD** format which is what photoshop uses for images.)
 
+### 2.4 Quitting
 
+The game can be quit by clicking on the "X" button on top of the window or by losing the game entirely which is followed by a [You Died](readme-files/end-game.jpg) screen and a timer set for 3 seconds that closes the window afterwards.
+
+- Currenly working on a solution to have the option to restart or quit the game (_time is running out._)
