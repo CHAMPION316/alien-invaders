@@ -7,7 +7,7 @@ pygame.font.init()
 #.............................Initialize a window or screen for display 
 WIDTH, HEIGHT = 750, 750
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Space Invaders")  
+pygame.display.set_caption("Alien Invaders")  
 
 #..............................Load images
 RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "red_alien_ship.png"))
@@ -168,15 +168,15 @@ def main():
     FPS = 60
     level = 0       
     lives = 5
-    main_font = pygame.font.SysFont("cambriamath", 40)
-    loser_font = pygame.font.SysFont("cambriamath", 40)
+    main_font = pygame.font.SysFont("showcardgothic", 40)
+    loser_font = pygame.font.SysFont("showcardgothic", 40)
     
     enemies = []
     wave_length = 5
     enemy_speed = 2
     
-    player_speed = 6
-    laser_speed = 7
+    player_speed = 5
+    laser_speed = 6
     
 #.............................calling the class player, inputs for players location on the window    
     player = Player(350, 620)
@@ -270,7 +270,7 @@ def main():
 
 #.................Menu that begins with a click
 def main_menu():
-    title_font = pygame.font.SysFont("cambriamath", 40)
+    title_font = pygame.font.SysFont("showcardgothic", 40)
     run = True
     while run:
         WIN.blit(BG, (0,0))
