@@ -8,6 +8,9 @@ Taking inspiration from the classic 1978 [Space Invaders](https://en.wikipedia.o
 - [Gameplay](#2-gameplay)
 - [Technologies Used](#3-technologies-used)
 - [Testing](#4-testing)
+- [Deployment](#5-deployment)
+- [Credits](#6-credits)
+- [Acknowledgments](#7-acknowledgments)
 
 ## 1 Description
 
@@ -28,6 +31,12 @@ I required a lot of help and guidance for this project due to the fact that I ha
 
 ### 1.4 Style
 The background is presented with the same image that you see in the main menu of the game which is the background of where the game takes place. I chose a font that would fit an alien invasion theme and came to the conclusion that [_**Showcard Gothic**_](readme-files/font-style.jpg) was the best option visually.
+
+### 1.5 Wirerames
+I used OneNote to draw the ships, and background of this project.
+- [Enemy Drawing](wireframes/enemy-drawing.jpg)
+- [Player Drawing](wireframes/player-drawing.jpg)
+- [Background](wireframes/bg-drawing.jpg)
 
 
 ## 2 Gameplay
@@ -87,7 +96,47 @@ The game can be quit by clicking on the "X" button on top of the window or by lo
 - [YouTube](https://www.youtube.com/) - used to learn about the code I was writing.
 - [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) - used to create the images for the game.
 - [Pygame Documentation](https://www.pygame.org/news) - learn the documentation of python for pygame.
+- [OneNote](https://www.microsoft.com/en-us/microsoft-365/onenote/digital-note-taking-app) - all my ideas and drawings
 
 ## 4 Testing
 
 -   The testing process was done on a separate [TESING.md](TESTING.md)
+
+## 5 Deployment
+
+**To deploy the project**
+
+This project is hosted in GitHub Pages
+
+1. On the menu on the top of the project’s repository on GitHub select **Settings**.
+2. Scroll down to the GitHub **Pages** section.
+3. Inside that section, click on the drop-down menu under **Source** and select **Main Branch**.
+4. The page refreshes automatically and the website is now deployed.
+5. The link to the webpage is just in the GitHub **Pages** section down below.
+
+Only one branch has been used for this project.
+
+**To run the project locally**
+
+To clone this project from GitHub:
+
+1. Under the repository’s name, click **Clone or download**.
+2. In the **Clone with hTTPS** section, copy the given URL.
+3. In your IDE of choice, open **Git Bash**.
+4. Change the current working directory to the location where you want the cloned directory to be made.
+5. Type **git clone**, and then paste the URL copied from GitHub.
+6. Press **enter** and the local clone will be created.
+
+## 6 Credits
+
+### 6.1 Content
+- 
+- I would like to thank Tim from [_Tech with Tim_](https://www.youtube.com/c/TechWithTim) from YouTube because with the short time that I had after returning from an isolated ship with no internet that required me to postpone my course. I needed guidance and understanding for a language I was not able to practice since September of 2021. It wasn't until now about a 1.5 weeks ago that I was finally home capable of of speeding up the process even then I am struggling to grasp a lot because of the short time I had. 
+
+### 7 Acknowledgments
+
+- The [Code Institute](https://codeinstitute.net/) team.
+- [Stackoverflow](https://stackoverflow.com/) for having answers when I need them.
+- [Google](https://google.com/) for being the best search engine in this day and age.
+- My wife Emelie for being encouraging while I stressed as I feel like I'm falling behind.
+- Tim from Tech with Tim as I mentioned above.
