@@ -4,10 +4,12 @@ Taking inspiration from the classic 1978 [Space Invaders](https://en.wikipedia.o
 
 ## Table of contents
 
-- [Description](#description)
-- [Gameplay](#gameplay)
+- [Description](#1-description)
+- [Gameplay](#2-gameplay)
+- [Technologies Used](#3-technologies-used)
+- [Testing](#4-testing)
 
-## 1. Description
+## 1 Description
 
 The game is a very standard old school style 2D [fixed shooter](https://en.wikipedia.org/wiki/Shoot_%27em_up#Fixed_shooters) game in which the player uses directional inputs in order to manuever the space ship. 
 
@@ -19,7 +21,7 @@ The objective is to make it through as many levels as possible without dying but
 
 Upon loading the game you will be presented with a very simplistic main menu. You will be instructed to [**click**](readme-files/start-game.jpg) the mouse button in order to begin playing.
 
-### 1.3 User Goal
+### 1.3 User Goals
 
 I required a lot of help and guidance for this project due to the fact that I had to take a leave of absense at a job in a cruise ship until just about two weeks ago. There is more I would of liked to have done with this project but unfortunately time was not on my side. I struggled remembering a lot of the information I had learned since there was no way for me to spend the necessary time learning the material. I had to fast track and use a lot of resources to gain some kind of grasp of what I was doing.
 
@@ -73,3 +75,19 @@ Lasers in this game have a [__cooldown__](readme-files/cooldown-shot.jpg) of 1 s
 The game can be quit by clicking on the "X" button on top of the window or by losing the game entirely which is followed by a [You Died](readme-files/end-game.jpg) screen and a timer set for 3 seconds that closes the window afterwards.
 
 - Currenly working on a solution to have the option to restart or quit the game (_time is running out._)
+
+## 3 Technologies used
+
+- [Visual Studio Code](https://code.visualstudio.com/download) - used to develop the website outside of Gitpod.
+- [GitHub](https://github.com/) - used to host the project.
+- [Python](https://www.python.org/) - used to run python on the computer. 
+- [Python-Tutor](https://pythontutor.com/) - used to understand breakdown of code. 
+- [Git Bash](https://git-scm.com/downloads) - used as the terminal window to upload to github.
+- [Shell Prompt](https://en.wikibooks.org/wiki/Guide_to_Unix/Explanations/Shell_Prompt) - used in Visual Studio and out.
+- [YouTube](https://www.youtube.com/) - used to learn about the code I was writing.
+- [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) - used to create the images for the game.
+- [Pygame Documentation](https://www.pygame.org/news) - learn the documentation of python for pygame.
+
+## 4 Testing
+
+-   The testing process was done on a separate [TESING.md](TESTING.md)

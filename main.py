@@ -15,7 +15,6 @@ GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "green_alien_ship.pn
 BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets","blue_alien_ship.png"))
 
 #.............................The user's character image (player)
-#YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_yellow.png"))
 WAR_SPACE_SHIP = pygame.image.load(os.path.join("assets","raider_raptor.png"))
 
 #Laser images
@@ -62,7 +61,6 @@ class Ship:
         
     #............................Method that draws size of player on the window (temporary design *rectangle*)
     def draw(self, window):
-        #pygame.draw.rect(window, (255, 255, 51), (self.x, self.y, 30, 30))
         window.blit(self.ship_img, (self.x, self.y,))
         for laser in self.lasers:
             laser.draw(window)
@@ -102,7 +100,7 @@ class Ship:
 class Player(Ship):
     def __init__(self, x, y, health = 100):
         super().__init__(x, y, health)
-        self.ship_img = WAR_SPACE_SHIP #YELLOW_SPACE_SHIP
+        self.ship_img = WAR_SPACE_SHIP
         self.laser_img = YELLOW_LASER
         self.mask = pygame.mask.from_surface(self.ship_img)
         self.max_health = health
