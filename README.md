@@ -1,4 +1,4 @@
-# 2D Shooter [Alien Invaders](https://github.com/CHAMPION316)
+# 2D Shooter [Alien Invaders](https://github.com/CHAMPION316/alien-invaders)
 
 Taking inspiration from the classic 1978 [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders). This is a 2D shooter created in [python](https://www.python.org/) using [pygame](https://www.pygame.org/news). 
 
@@ -26,7 +26,7 @@ Upon loading the game you will be presented with a very simplistic main menu. Yo
 
 ### 1.3 User Goals
 
-I required a lot of help and guidance for this project due to the fact that I had to take a leave of absense at a job in a cruise ship until just about two weeks ago. There is more I would of liked to have done with this project but unfortunately time was not on my side. I struggled remembering a lot of the information I had learned since there was no way for me to spend the necessary time learning the material. I had to fast track and use a lot of resources to gain some kind of grasp of what I was doing.
+I required a lot of help and guidance for this project due to the fact that I had to take a leave of absense at a job in a cruise ship until just about two weeks ago. There is more I would of liked to have done with this project but unfortunately time was not on my side.
 
 
 ### 1.4 Style
@@ -46,7 +46,18 @@ I used OneNote to draw the ships, and background of this project.
 In the top left and right corners of the screen the player will be presented with the lives and level numbers that corresponds to them.
 - [Game-Bar](readme-files/game-bar.jpg)
 
-### 2.1 Lives
+### 2.1 How to play the game
+
+You will need to install the [pygame package](https://github.com/pygame/pygame):
+
+Depending on the version of pip that you have installed. Try pip3 first, and if the command is not recognised, try with pip.
+
+```sh
+$ pip3 install pygame
+$ pip install pygame
+```
+
+### 2.2 Lives
 
 [**Lives-Level**](readme-files/lives-level.jpg)
 
@@ -56,7 +67,7 @@ Player begins game with 5 lives but can _lose_ them if:
 
 - _However the player begins with **5 lives** at the start of the game._
 
-### 2.2 Health Bar
+### 2.3 Health Bar
 
 The player maintains a health bar of 100% that decreases by 10% by either:
 
@@ -67,7 +78,7 @@ When the player loses all of his health he will lose the game even if he has a s
 
 - _Lives only count toward letting the enemy reach bottom screen not wiping out player's health bar._
 
-### 2.3 Lasers
+### 2.4 Lasers
 
 Lasers in this game have a [__cooldown__](readme-files/cooldown-shot.jpg) of 1 second before they can be fired again for both the player and the enemy.
 
@@ -79,11 +90,16 @@ Lasers in this game have a [__cooldown__](readme-files/cooldown-shot.jpg) of 1 s
     * [Space_Ship](readme-files/space_ship_creation.jpg)
 - (The other colors were only saved as **PNG** format since all I had to do was change the color in the **PSD** format which is what photoshop uses for images.)
 
-### 2.4 Quitting
+### 2.5 Collision Detection
+Collision in the game accurs between two objects. 
 
-The game can be quit by clicking on the "X" button on top of the window or by losing the game entirely which is followed by a [You Died](readme-files/end-game.jpg) screen and a timer set for 3 seconds that closes the window afterwards.
+* _Player and enemy objects_
+* _Player and enemy Lasers_
+    * _Vice versa_
 
-- Currenly working on a solution to have the option to restart or quit the game (_time is running out._)
+### 2.6 Quitting
+
+The game can be quit by clicking on the "X" button on top of the window or by losing the game entirely which is followed by a [**'You Died'**](readme-files/end-game.jpg) screen and a timer set for 3 seconds that brings you back to the main menu.
 
 ## 3 Technologies used
 
@@ -130,13 +146,13 @@ To clone this project from GitHub:
 ## 6 Credits
 
 ### 6.1 Content
-- 
-- I would like to thank Tim from [_Tech with Tim_](https://www.youtube.com/c/TechWithTim) from YouTube because with the short time that I had after returning from an isolated ship with no internet that required me to postpone my course. I needed guidance and understanding for a language I was not able to practice since September of 2021. It wasn't until now about a 1.5 weeks ago that I was finally home capable of of speeding up the process even then I am struggling to grasp a lot because of the short time I had. 
+ 
+- I would like to thank Tim from [_Tech with Tim_](https://www.youtube.com/c/TechWithTim) from YouTube because with the short time that I had after returning from an isolated ship with no internet that required me to postpone my course. I needed guidance and understanding for a language I was not able to practice since September of 2021. It wasn't until now about a 1.5 weeks ago that I was finally home capable of of speeding up the process even then I am struggling to grasp a lot of the concepts because of the short time I had. 
 
 ### 7 Acknowledgments
 
 - The [Code Institute](https://codeinstitute.net/) team.
 - [Stackoverflow](https://stackoverflow.com/) for having answers when I need them.
 - [Google](https://google.com/) for being the best search engine in this day and age.
-- My wife Emelie for being encouraging while I stressed as I feel like I'm falling behind.
-- Tim from Tech with Tim as I mentioned above.
+- My wife Emelie for being encouraging while I stressed getting this done.
+- Tim from 'Tech with Tim' as I mentioned above.

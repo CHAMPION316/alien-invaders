@@ -23,10 +23,10 @@ GREEN_LASER = pygame.image.load(os.path.join("assets", "laser_green.png"))
 BLUE_LASER = pygame.image.load(os.path.join("assets", "laser_blue.png"))
 YELLOW_LASER = pygame.image.load(os.path.join("assets", "laser_yellow.png"))
 
-#...................................Background
+#...................................Background image
 BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "outer_space_bg.png")), (WIDTH, HEIGHT))
 
-#......................................class for shooting lasers 
+#......................................class for shooting lasers, collision, movement, exceed screen height  
 class Laser:
     def __init__(self, x, y, img):
         self.x = x
@@ -59,7 +59,7 @@ class Ship:
         self.lasers = []
         self.cool_down_counter = 0
         
-    #............................Method that draws size of player on the window (temporary design *rectangle*)
+    #............................method that draws size of player on the window (temporary design *rectangle*)
     def draw(self, window):
         window.blit(self.ship_img, (self.x, self.y,))
         for laser in self.lasers:
@@ -83,20 +83,22 @@ class Ship:
         elif self.cool_down_counter > 0:
             self.cool_down_counter += 1
     
-    #...................................method that allows the succession if when lasers can be fired   
+    #...................................allows the succession of when lasers can be fired   
     def shoot(self):
         if self.cool_down_counter == 0:
             laser = Laser(self.x, self.y, self.laser_img)
             self.lasers.append(laser)
             self.cool_down_counter = 1
-        
+     
+    #........................................returns value of ship width    
     def get_width(self):
         return self.ship_img.get_width()
     
+    #........................................returns value of ship height 
     def get_height(self):
         return self.ship_img.get_height()
         
-#.........................................Takes inheritance from class Ship for use in player
+#.........................................attributes for player ship 
 class Player(Ship):
     def __init__(self, x, y, health = 100):
         super().__init__(x, y, health)
@@ -130,7 +132,7 @@ class Player(Ship):
         pygame.draw.rect(window, (0, 255, 0), (self.x, self.y + self.ship_img.get_height() + 10, self.ship_img.get_width() * (self.health / self.max_health), 10))
         
 
-#........................................Enemy ship class and their colors         
+#........................................Enemy ship class and their attributes         
 class Enemy(Ship):
     ENEMY_COLORS = {
                    "blue": (BLUE_SPACE_SHIP, BLUE_LASER),
@@ -206,7 +208,7 @@ def main():
             WIN.blit(lost_label, (WIDTH/2 - lost_label.get_width()/2, 350))
         
         pygame.display.update()
-    
+    #..............................while loop that runs game at 60fps (all devices) and checks for events
     while run:
         clock.tick(FPS)
         redraw_window()
@@ -266,7 +268,7 @@ def main():
         #.........................................checks if lasers have collided with enemies      
         player.move_lasers(-laser_speed, enemies)
 
-#.................Menu that begins with a click
+#.................fucntion for main-menu that begins with a mouse click 
 def main_menu():
     title_font = pygame.font.SysFont("showcardgothic", 40)
     run = True
