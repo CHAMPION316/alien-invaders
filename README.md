@@ -120,7 +120,7 @@ The game can be quit by clicking on the "X" button on top of the window or by lo
 
 ## 5 Deployment
 
-**To deploy the project**
+**How to deploy the project**
 
 This project is hosted in GitHub Pages
 
