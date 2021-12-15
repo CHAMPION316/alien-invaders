@@ -87,7 +87,8 @@ Lasers in this game have a [__cooldown__](readme-files/cooldown-shot.jpg) of 1 s
 - Background and ships are PNG images designed by me using [Adobe Photoshop](https://www.adobe.com/products/photoshop.html)
 
     * [Laser_Image](readme-files/laser_green_0.jpg)
-    * [Space_Ship](readme-files/space_ship_creation.jpg)
+    * [Enemy_Space_Ship](readme-files/space_ship_creation.jpg)
+    * [Player_Space_Ship](readme-files/player_creation.jpg)
 - (The other colors were only saved as **PNG** format since all I had to do was change the color in the **PSD** format which is what photoshop uses for images.)
 
 ### 2.5 Collision Detection
