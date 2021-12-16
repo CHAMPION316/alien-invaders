@@ -8,9 +8,10 @@ Taking inspiration from the classic 1978 [Space Invaders](https://en.wikipedia.o
 - [Gameplay](#2-gameplay)
 - [Technologies Used](#3-technologies-used)
 - [Testing](#4-testing)
-- [Deployment](#5-deployment)
-- [Credits](#6-credits)
-- [Acknowledgments](#7-acknowledgments)
+- [Improvements](#5-improvements)
+- [Deployment](#6-deployment)
+- [Credits](#7-credits)
+- [Acknowledgments](#8-acknowledgments)
 
 ## 1 Description
 
@@ -65,8 +66,6 @@ Player begins game with 5 lives but can _lose_ them if:
 
 - _If the player allows the enemey to reach the bottom of the screen._
 
-- _However the player begins with **5 lives** at the start of the game._
-
 ### 2.3 Health Bar
 
 The player maintains a health bar of 100% that decreases by 10% by either:
@@ -117,9 +116,13 @@ The game can be quit by clicking on the "X" button on top of the window or by lo
 
 ## 4 Testing
 
--   The testing process was done on a separate [TESING.md](TESTING.md)
+-   The testing process was done on a separate file [TESING.md](TESTING.md)
 
-## 5 Deployment
+## 5 Improvements
+- Program the game so that losing health also count towards lives lost and reset of player position.
+- Option to continue playing after death or quitting the game.
+
+## 6 Deployment
 
 **How to deploy the project**
 
@@ -144,13 +147,13 @@ To clone this project from GitHub:
 5. Type **git clone**, and then paste the URL copied from GitHub.
 6. Press **enter** and the local clone will be created.
 
-## 6 Credits
+## 7 Credits
 
-### 6.1 Content
+### 7.1 Content
  
 - I would like to thank Tim from [_Tech with Tim_](https://www.youtube.com/c/TechWithTim) from YouTube because with the short time that I had after returning from an isolated ship with no internet that required me to postpone my course. I needed guidance and understanding for a language I was not able to practice since September of 2021. It wasn't until now about a 1.5 weeks ago that I was finally home capable of of speeding up the process even then I am struggling to grasp a lot of the concepts because of the short time I had. 
 
-### 7 Acknowledgments
+### 8 Acknowledgments
 
 - The [Code Institute](https://codeinstitute.net/) team.
 - [Stackoverflow](https://stackoverflow.com/) for having answers when I need them.
