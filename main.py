@@ -17,7 +17,7 @@ BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets","blue_alien_ship.png")
 #.............................The user's character image (player)
 WAR_SPACE_SHIP = pygame.image.load(os.path.join("assets","raider_raptor.png"))
 
-#Laser images
+#.............................Laser images
 RED_LASER = pygame.image.load(os.path.join("assets", "laser_red.png"))
 GREEN_LASER = pygame.image.load(os.path.join("assets", "laser_green.png"))
 BLUE_LASER = pygame.image.load(os.path.join("assets", "laser_blue.png"))
@@ -26,7 +26,7 @@ YELLOW_LASER = pygame.image.load(os.path.join("assets", "laser_yellow.png"))
 #...................................Background image
 BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "outer_space_bg.png")), (WIDTH, HEIGHT))
 
-#......................................class for shooting lasers, collision, movement, exceed screen height  
+#......................................class for shooting lasers, collision, movement, and exceed screen height  
 class Laser:
     def __init__(self, x, y, img):
         self.x = x
@@ -120,14 +120,14 @@ class Player(Ship):
                         if laser in self.lasers:
                             self.lasers.remove(laser)
     
-    #...........................draw healthbar
+    #...........................draw health_life
     def draw(self, window):
         super().draw(window)
-        self.healthbar(window)
+        self.health_life(window)
     
     
     #....................................................Player's health bar                    
-    def healthbar(self, window):
+    def health_life(self, window):
         pygame.draw.rect(window, (255, 0, 0), (self.x, self.y + self.ship_img.get_height() + 10, self.ship_img.get_width(), 10))
         pygame.draw.rect(window, (0, 255, 0), (self.x, self.y + self.ship_img.get_height() + 10, self.ship_img.get_width() * (self.health / self.max_health), 10))
         
@@ -213,10 +213,16 @@ def main():
         clock.tick(FPS)
         redraw_window()
         
-        #..................................................player dies if either of these statements are true and a life is lost
-        if lives <= 0 or player.health <= 0:
+        #.........................player dies when he runs out of lives
+        if lives <= 0:
             lost = True
             lost_count += 1
+        
+        #..............................if player loses all health, 1 life is lost and health is reset      
+        if player.health == 0:
+            lives -= 1
+            player.health = 100
+            
         
         #...................................................Timer that quits game after losing    
         if lost:

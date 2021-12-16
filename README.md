@@ -6,7 +6,7 @@ Taking inspiration from the classic 1978 [Space Invaders](https://en.wikipedia.o
 
 - [Description](#1-description)
 - [Gameplay](#2-gameplay)
-- [Technologies Used](#3-technologies-used)
+- [Technologies used](#3-technologies-used)
 - [Testing](#4-testing)
 - [Improvements](#5-improvements)
 - [Deployment](#6-deployment)
@@ -25,15 +25,10 @@ The objective is to make it through as many levels as possible without dying but
 
 Upon loading the game you will be presented with a very simplistic main menu. You will be instructed to [**click**](readme-files/start-game.jpg) the mouse button in order to begin playing.
 
-### 1.3 User Goals
-
-I required a lot of help and guidance for this project due to the fact that I had to take a leave of absense at a job in a cruise ship until just about two weeks ago. There is more I would of liked to have done with this project but unfortunately time was not on my side.
-
-
-### 1.4 Style
+### 1.3 Style
 The background is presented with the same image that you see in the main menu of the game which is the background of where the game takes place. I chose a font that would fit an alien invasion theme and came to the conclusion that [_**Showcard Gothic**_](readme-files/font-style.jpg) was the best option visually.
 
-### 1.5 Wirerames
+### 1.4 Wirerames
 I used OneNote to draw the ships, and background of this project.
 - [Enemy Drawing](wireframes/enemy-drawing.jpg)
 - [Player Drawing](wireframes/player-drawing.jpg)
@@ -101,6 +96,12 @@ Collision in the game accurs between two objects.
 
 The game can be quit by clicking on the "X" button on top of the window or by losing the game entirely which is followed by a [**'You Died'**](readme-files/end-game.jpg) screen and a timer set for 3 seconds that brings you back to the main menu.
 
+### Future features
+* Player lost of 100% results in life lost and a reset of position on the screen to continue playing.
+* Option after losing the game to quit or start a new game. 
+* New level means enemies with more health.
+* Upgrades to lasers to help combat those stronger enemies.
+
 ## 3 Technologies used
 
 - [Visual Studio Code](https://code.visualstudio.com/download) - used to develop the website outside of Gitpod.
@@ -151,7 +152,7 @@ To clone this project from GitHub:
 
 ### 7.1 Content
  
-- I would like to thank Tim from [_Tech with Tim_](https://www.youtube.com/c/TechWithTim) from YouTube because with the short time that I had after returning from an isolated ship with no internet that required me to postpone my course. I needed guidance and understanding for a language I was not able to practice since September of 2021. It wasn't until now about a 1.5 weeks ago that I was finally home capable of of speeding up the process even then I am struggling to grasp a lot of the concepts because of the short time I had. 
+- I would like to thank Tim from [_Tech with Tim_](https://www.youtube.com/c/TechWithTim) from YouTube because with the short time that I had after returning from an isolated ship with no internet that required me to postpone my course. I needed guidance and understanding for a language I was not able to practice since September of 2021. It wasn't until now about 1.5 weeks ago that I was finally home and able to begin this project. I will credit Tim with the code I have written which is also open for personal use and learning with a few adjustments as to how I prefer the game to be played and with the creation of my own PNG images.  
 
 ### 8 Acknowledgments
 
