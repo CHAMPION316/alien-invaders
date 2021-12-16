@@ -23,6 +23,7 @@ A google search for what I perceived to be an error message takes me to [Stack O
 ### Remaining Bug (not anymore)
 
 * When the player's health hits 0% the game ends even though the player has remaining lives when they aren't zero. Prior to sending the project this is the fix I was trying to work on. (_**At the time of updating this I finally fixed this bug that has haunted me on the final day.**_)
+    * [Fixed Bug Code](readme-files/fixed-health-bug.jpg)
 
 ### Validator testing
 

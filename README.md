@@ -114,6 +114,8 @@ The game can be quit by clicking on the "X" button on top of the window or by lo
 - [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) - used to create the images for the game.
 - [Pygame Documentation](https://www.pygame.org/news) - learn the documentation of python for pygame.
 - [OneNote](https://www.microsoft.com/en-us/microsoft-365/onenote/digital-note-taking-app) - all my ideas and drawings
+- [PEP8](http://pep8online.com/) - online code validator for python
+- [Stackedit](https://stackedit.io/) - is a README.md helper 
 
 ## 4 Testing
 
