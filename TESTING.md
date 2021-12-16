@@ -20,9 +20,9 @@ A google search for what I perceived to be an error message takes me to [Stack O
 
 * When I wrote the project the game kept running into negative lives and continuing in a endless loop. This was because I I forgot to add '=' sign with less than for the end when it hits 0 lives.
 
-### Remaining Bug
+### Remaining Bug (not anymore)
 
-* When the player's health hits 0% the game ends even though the player has remaining lives when they aren't zero. Prior to sending the project this is the fix I was trying to work on.
+* When the player's health hits 0% the game ends even though the player has remaining lives when they aren't zero. Prior to sending the project this is the fix I was trying to work on. (_**At the time of updating this I finally fixed this bug that has haunted me on the final day.**_)
 
 ### Validator testing
 

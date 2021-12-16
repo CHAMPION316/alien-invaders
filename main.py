@@ -4,29 +4,29 @@ import time
 import random
 pygame.font.init()
 
-#.............................Initialize a window or screen for display 
+#.................................Initialize a window or screen for display 
 WIDTH, HEIGHT = 750, 750
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Alien Invaders")  
 
-#..............................Load images
+#.................................Load images
 RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "red_alien_ship.png"))
 GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "green_alien_ship.png"))
 BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets","blue_alien_ship.png"))
 
-#.............................The user's character image (player)
+#...............................The user's character image (player)
 WAR_SPACE_SHIP = pygame.image.load(os.path.join("assets","raider_raptor.png"))
 
-#.............................Laser images
+#...............................Laser images
 RED_LASER = pygame.image.load(os.path.join("assets", "laser_red.png"))
 GREEN_LASER = pygame.image.load(os.path.join("assets", "laser_green.png"))
 BLUE_LASER = pygame.image.load(os.path.join("assets", "laser_blue.png"))
 YELLOW_LASER = pygame.image.load(os.path.join("assets", "laser_yellow.png"))
 
-#...................................Background image
+#..............................Background image
 BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "outer_space_bg.png")), (WIDTH, HEIGHT))
 
-#......................................class for shooting lasers, collision, movement, and exceed screen height  
+#.........................Class for shooting lasers, collision, movement, and exceed screen height  
 class Laser:
     def __init__(self, x, y, img):
         self.x = x
@@ -46,7 +46,7 @@ class Laser:
     def collision(self, obj):
         return collide(self, obj)
 
-#....................................Class player's character and it's attributes
+#..................................Ships attributes
 class Ship: 
     COOLDOWN = 30
     
@@ -59,7 +59,7 @@ class Ship:
         self.lasers = []
         self.cool_down_counter = 0
         
-    #............................method that draws size of player on the window (temporary design *rectangle*)
+    #..........................Method that draws size of player on the window (temporary design *rectangle*)
     def draw(self, window):
         window.blit(self.ship_img, (self.x, self.y,))
         for laser in self.lasers:
@@ -223,7 +223,6 @@ def main():
             lives -= 1
             player.health = 100
             
-        
         #...................................................Timer that quits game after losing    
         if lost:
             if lost_count > FPS * 3:
@@ -270,9 +269,8 @@ def main():
             elif enemy.y + enemy.get_height() > HEIGHT:
                 lives -= 1
                 enemies.remove(enemy)
-                
-        #.........................................checks if lasers have collided with enemies      
-        player.move_lasers(-laser_speed, enemies)
+                      
+        player.move_lasers(-laser_speed, enemies) # checks if lasers have collided with enemies
 
 #.................fucntion for main-menu that begins with a mouse click 
 def main_menu():
