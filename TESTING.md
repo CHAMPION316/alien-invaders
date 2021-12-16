@@ -4,7 +4,7 @@ Testing was done using the (IDE) Visual Studio on Windows 10 using a _**Surface 
 
  Debugging was done using Visual Studio. Here are the final results for the dubugging.
 
- ### Error Message
+ ### Error Message: Command Line
 
 - [**Results**](readme-files/debug-results.jpg)
 
@@ -26,4 +26,16 @@ A google search for what I perceived to be an error message takes me to [Stack O
 
 ### Validator testing
 
+* PEP8
+    * [Results Image](readme-files/PEP8-results.jpg)
+    * [Reults 2 Image](readme-files/PEP8-results2.jpg)
 
+Most of my errors consist of:
+    
+* _Trailing white space**
+    
+* _Blank line contains whitespace_
+    
+* _Block comment should start with '#'_
+
+_**(I was unable to clear all errors as I ran out of time)**_
