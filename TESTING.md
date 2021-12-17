@@ -40,3 +40,14 @@ Most of my errors consist of:
 * _Block comment should start with '#'_
 
 _**(I was unable to clear all errors as I ran out of time)**_
+
+## (URGENT) Issues with HEROKU
+
+* I had sent this project but provided the wrong email so I was allowed to send it again. I again tried to fix the issue of having the program run on HEROKU but was not successfuly. I even went as far as creating a new repository and importing the code on there. That at least opened the window for the game but was still gettting a video "No available video device" error. I have ran out of options and will use my original repository because it has all my commits and hardwork. I will provide a link to the new repository that I created but didn't manage to successsfully finish. 
+    * [alien-masters](https://github.com/CHAMPION316/alien-masters)
+
+Not all my folders are in here but the ones that make the game run are. My intention was to get the game to run before I imported the folders that had my readme-files etc. 
+
+## My apologies 
+
+I deeply apologize, I googled as much as I could and it takes forever to get help from student care. The project works on it's own on my IDE but considering that I just found out about HEROKU since I just got reinstated I was unable to successfully fix the issue. I await a response email for what I consider an embarrassment.
