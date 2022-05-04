@@ -29,9 +29,11 @@ Upon loading the game you will be presented with a very simplistic main menu. Yo
 The background is presented with the same image that you see in the main menu of the game which is the background of where the game takes place. I chose a font that would fit an alien invasion theme and came to the conclusion that [_**Showcard Gothic**_](readme-files/font-style.jpg) was the best option visually.
 
 ### 1.4 Wirerames
-I used OneNote to draw the ships, and background of this project.
+I used OneNote for the rough draft ideas to draw the ships, and background of this project. However Photoshop was where I created the acutal png images that you see in the game.
 - [Enemy Drawing](wireframes/enemy-drawing.jpg)
+- [Enemy Final]()
 - [Player Drawing](wireframes/player-drawing.jpg)
+- [Player Drawing]()
 - [Background](wireframes/bg-drawing.jpg)
 
 
@@ -151,16 +153,25 @@ To clone this project from GitHub:
 5. Type **git clone**, and then paste the URL copied from GitHub.
 6. Press **enter** and the local clone will be created.
 
+**Update on deployment**
+
+Due to this being a pygame project it will not run on heroku. I spoke with student care and it was concluded that I will upload this project on replit instead.
+- [replit](https://replit.com/) 
+
 ## 7 Credits
 
 ### 7.1 Content
  
 - I would like to thank Tim from [_Tech with Tim_](https://www.youtube.com/c/TechWithTim) from YouTube because with the short time that I had after returning from an isolated ship with no internet that required me to postpone my course. I needed guidance and understanding for a language I was not able to practice since September of 2021. It wasn't until now about 1.5 weeks ago that I was finally home and able to begin this project. I will credit Tim with the code I have written which is also open for personal use and learning with a few adjustments as to how I prefer the game to be played and with the creation of my own PNG images.  
 
+- I would like to thank my amazing wife Emelie for always being there through the good and the bad when it comes to learning programming.
+
+- Previous mentor George who at the inception of this project was my current mentor.
+
 ### 8 Acknowledgments
 
 - The [Code Institute](https://codeinstitute.net/) team.
 - [Stackoverflow](https://stackoverflow.com/) for having answers when I need them.
 - [Google](https://google.com/) for being the best search engine in this day and age.
-- My wife Emelie for being encouraging while I stressed getting this done.
+- Student Care
 - Tim from 'Tech with Tim' as I mentioned above.
