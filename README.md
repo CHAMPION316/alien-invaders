@@ -31,9 +31,9 @@ The background is presented with the same image that you see in the main menu of
 ### 1.4 Wirerames
 I used OneNote for the rough draft ideas to draw the ships, and background of this project. However Photoshop was where I created the acutal png images that you see in the game.
 - [Enemy Drawing](wireframes/enemy-drawing.jpg)
-- [Enemy Final]()
+- [Enemy Final](readme-files/space_ship_creation.jpg)
 - [Player Drawing](wireframes/player-drawing.jpg)
-- [Player Drawing]()
+- [Player Drawing](wireframes/player-drawing.jpg)
 - [Background](wireframes/bg-drawing.jpg)
 
 
@@ -121,7 +121,7 @@ The game can be quit by clicking on the "X" button on top of the window or by lo
 
 ## 4 Testing
 
--   The testing process was done on a separate file [TESING.md](TESTING.md)
+-   The testing process was done on a separate file [TESTING.md](TESTING.md)
     - (_**IMPORTANT MY ISSUES WITH HEROKU**_)
 
 ## 5 Improvements
@@ -159,8 +159,6 @@ Due to this being a pygame project it will not run on heroku. I spoke with stude
 - [replit](https://replit.com/) 
 
 ## 7 Credits
-
-### 7.1 Content
  
 - I would like to thank Tim from [_Tech with Tim_](https://www.youtube.com/c/TechWithTim) from YouTube because with the short time that I had after returning from an isolated ship with no internet that required me to postpone my course. I needed guidance and understanding for a language I was not able to practice since September of 2021. It wasn't until now about 1.5 weeks ago that I was finally home and able to begin this project. I will credit Tim with the code I have written which is also open for personal use and learning with a few adjustments as to how I prefer the game to be played and with the creation of my own PNG images.  
 
