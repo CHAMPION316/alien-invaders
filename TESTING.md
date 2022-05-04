@@ -18,6 +18,7 @@ A google search for what I perceived to be an error message takes me to [Stack O
 - [**Fix Link**](https://stackoverflow.com/questions/22745076/libpng-warning-iccp-known-incorrect-srgb-profile)
 - [**Fix Image**](readme-files/warning-ms.jpg)
 
+
 ## Bugs
 
 * When I wrote the project the game kept running into negative lives and continuing in a endless loop. This was because I I forgot to add '=' sign with less than for the end when it hits 0 lives.
@@ -29,7 +30,7 @@ A google search for what I perceived to be an error message takes me to [Stack O
 
 ## Code validators testing
 
-[**PEP8 Validator Results**](docs/img/PEP8_results.jpg): 
+[**PEP8 Validator Results**](readme-files/PEP8_results.jpg): 
 
 All errors were fixed using PEP8 except for two lines of code:
 - Code E501 (line too long > 79 characters)
@@ -60,7 +61,3 @@ Within the terminal in the problems column I currently have 27 problems, which a
     * [**alien-masters**](https://github.com/CHAMPION316/alien-masters)
 
 Not all my folders are in here but the ones that make the game run are. My intention was to get the game to run before I imported the folders that had my readme-files etc. 
-
-## My apologies 
-
-I deeply apologize, I googled as much as I could and it takes forever to get help from student care. The project works on it's own on my IDE but considering that I just found out about HEROKU since I just got reinstated I was unable to successfully fix the issue. I await a response email for what I consider an embarrassment.
