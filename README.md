@@ -28,13 +28,13 @@ Upon loading the game you will be presented with a very simplistic main menu. Yo
 ### 1.3 Style
 The background is presented with the same image that you see in the main menu of the game which is the background of where the game takes place. I chose a font that would fit an alien invasion theme and came to the conclusion that [_**Showcard Gothic**_](readme-files/font-style.jpg) was the best option visually.
 
-### 1.4 Wirerames
+### 1.4 Wireframes
 I used OneNote for the rough draft ideas to draw the ships, and background of this project. However Photoshop was where I created the acutal png images that you see in the game.
 - [Enemy Drawing](wireframes/enemy-drawing.jpg)
 - [Enemy Final](readme-files/space_ship_creation.jpg)
 - [Player Drawing](wireframes/player-drawing.jpg)
-- [Player Drawing](wireframes/player-drawing.jpg)
-- [Background](wireframes/bg-drawing.jpg)
+- [Player Final](readme-files/player_creation.jpg)
+- [Background Drawing](wireframes/bg-drawing.jpg)
 
 
 ## 2 Gameplay
@@ -166,7 +166,7 @@ Due to this being a pygame project it will not run on heroku. I spoke with stude
 
 - Previous mentor George who at the inception of this project was my current mentor.
 
-### 8 Acknowledgments
+## 8 Acknowledgments
 
 - The [Code Institute](https://codeinstitute.net/) team.
 - [Stackoverflow](https://stackoverflow.com/) for having answers when I need them.
