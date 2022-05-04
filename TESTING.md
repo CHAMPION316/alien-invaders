@@ -37,7 +37,7 @@ All errors were fixed using PEP8 except for two lines of code:
 
 ## PROBLEMS
 
-[**run.py problem image**](docs/img/problems_image.jpg):
+[**run.py problem image**](readme-files/problems_image.jpg):
 
 Within the terminal in the problems column I currently have 27 problems, which are as follows:
 - 13 total: pylint(no-member) [**pylint(no-member)**](https://www.lesinskis.com/pylint-false-positives.html)
