@@ -83,7 +83,7 @@ class Ship:
 
     def move_lasers(self, speed, obj):
         """
-        Method for different scenarios upon firing lasers
+        Function for laser movement and collision
         """
         self.cooldown()
         for laser in self.lasers:
